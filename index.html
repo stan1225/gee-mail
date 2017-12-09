@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<img src="https://webdesignerdepot.s3.amazonaws.com/default-images/1.jpg" alt="background">
+		<!-- <img src="https://webdesignerdepot.s3.amazonaws.com/default-images/1.jpg" alt="background"> -->
 		<h1>Gee-Mail</h1>
 		<h2>content</h2>
 		<h3>inbox</h3>
@@ -8,18 +8,81 @@
 		<script src="js/mail-generator.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
     <script>
-      window.onload = function(){
+
+
+    	window.onload = function(){
+
+  	for(var i = 0; i < window.geemails.length; i++){
+
+
+
+	  var itemBox = document.createElement("div");
+	  itemBox.className = "container";
+	  document.body.appendChild(itemBox);
+
+	  var dateBox = document.createElement("div");
+	  dateBox.className = "datebox";
+	  dateBox.innerHTML = window.geemails[i].date;
+	  itemBox.appendChild(dateBox);
+
+	  var subjectBox = document.createElement("div");
+	  subjectBox.style.border = "1px solid black";
+	  subjectBox.className = "subjbox";
+	  subjectBox.innerHTML = window.geemails[i].subject;
+	  itemBox.appendChild(subjectBox);
+
+	  var senderBox = document.createElement("div");
+	  senderBox.style.border = "1px solid black";
+	  senderBox.className = "sendbox";
+	  senderBox.innerHTML = window.geemails[i].sender;
+	  itemBox.appendChild(senderBox);
+
+	  var bodyBox = document.createElement("div");
+	  bodyBox.style.border = "1px solid black";
+	  bodyBox.className = "bodbox";
+	  bodyBox.innerHTML = window.geemails[i].body;
+	  itemBox.appendChild(bodyBox);
+	}
+	};
+
+	
+
+
+
+
+
+
+	
+
+
+
+	  
+
+
+	
+
+
+
+
+
+
+
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-        
-      };
+   
+
+  
+
+
+
+
     </script>
 	</head>
 	<body>
 		<div class="container" id="main">
 			Build Me!
 		</div>
-		<img src="https://webdesignerdepot.s3.amazonaws.com/default-images/1.jpg" alt="background">
+		<!-- <img src="https://webdesignerdepot.s3.amazonaws.com/default-images/1.jpg" alt="background"> -->
 		<script src="js/mail-generator.js"></script>
 	</body>
 </html>
