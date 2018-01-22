@@ -58,16 +58,5 @@
 
 })();
 
-  var hideMsg = document.getElementsByClassName("container");
-  hideMsg.addEventListener("click", showMsg);
-  function showMsg(){
-    var msg = this.querySelectorAll("bodbox");
-    if(msg.style.display === "none"){
-      msg.style.display = "block";
-    }else{
-      msg.style.display = "none";
-    }
   
-  }
-
 

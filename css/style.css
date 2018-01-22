@@ -1,26 +1,4 @@
-h1 {
-	background-color: cornflowerblue
-
-}
-
-
-.container {
-		list-style-type: none;
-	    display: inline-block;
-	    font-size: 15px;
-	    transition-duration: 5s;
-	    padding: 0px 10px;
-	    border-width: 1px;
-	    border-style: solid;
-	    border-color: white;
-	    border-image: initial;
-}
-
-.datebox {
-		text-align: center;
-	    transition-duration: 5s;
-	    border-width: initial;
-	    border: 2px solid black;
-	    border-style: initial;
-	    border-color: black;
+#email_logo{
+    max-width: 150px;
+    max-height: 100px;
 }

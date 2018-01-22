@@ -1,20 +1,56 @@
 <html>
 	<head>
-		<!-- <img src="https://webdesignerdepot.s3.amazonaws.com/default-images/1.jpg" alt="background"> -->
-		<h1>Gee-Mail</h1>
-		<h2>content</h2>
-		<h3>inbox</h3>
+		 <title>Stan Gee-Mail App</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--CSS Style Sheet & JS Dependencies-->
+  <link rel="stylesheet" href="css/style1.css" />
+  <script src="js/mail-generator.js"></script>
+  <script src="js/js1.js"></script>
+<!--Boostrap Dependencies-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<body>
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidebar">
+        <img id="email_logo" src="gmail_icon.png"/>
+      <h4>GEE-MAIL</h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="#section1">Home</a></li>
+        <li><a href="#">Inbox</a></li>
+        <li><a href="#">Starred</a></li>
+        <li><a href="#">Sent</a></li>
+        <li><a href="#">Email Count: </a></li>
+      </ul>
+    </div>
+
+    <div class="col-sm-9" id="main-content">
+        
+
+    </div>
+  </div>
+</div>
+
+<footer id= "footer-div" class="container-fluid">
+  <p></p>
+</footer>
+
+</body>
+</html>
+
 		<div class="counter"></div>
 		<script src="js/mail-generator.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
     <script>
-
-
-    	window.onload = function(){
+        
+window.onload = function(){
 
   	for(var i = 0; i < window.geemails.length; i++){
-
-
 
 	  var itemBox = document.createElement("div");
 	  itemBox.className = "container";
@@ -24,6 +60,12 @@
 	  dateBox.className = "datebox";
 	  dateBox.innerHTML = window.geemails[i].date;
 	  itemBox.appendChild(dateBox);
+        
+        var senderBox = document.createElement("div");
+	  senderBox.style.border = "1px solid black";
+	  senderBox.className = "sendbox";
+	  senderBox.innerHTML = window.geemails[i].sender;
+	  itemBox.appendChild(senderBox);
 
 	  var subjectBox = document.createElement("div");
 	  subjectBox.style.border = "1px solid black";
@@ -31,11 +73,7 @@
 	  subjectBox.innerHTML = window.geemails[i].subject;
 	  itemBox.appendChild(subjectBox);
 
-	  var senderBox = document.createElement("div");
-	  senderBox.style.border = "1px solid black";
-	  senderBox.className = "sendbox";
-	  senderBox.innerHTML = window.geemails[i].sender;
-	  itemBox.appendChild(senderBox);
+
 
 	  var bodyBox = document.createElement("div");
 	  bodyBox.style.border = "1px solid black";
@@ -44,6 +82,20 @@
 	  itemBox.appendChild(bodyBox);
 	}
 	};
+
+var showMsg = document.getElementsByClassName("container");
+  showMsg.addEventListener("click", showMsg);
+
+  function showMsg(){
+    var msg = this.querySelectorAll("bodbox");
+    if(msg.style.display === "none"){
+      msg.style.display = "block";
+    }else{
+      msg.style.display = "none";
+    }
+  
+  }
+
 
 	
 
