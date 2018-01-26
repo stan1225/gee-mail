@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--CSS Style Sheet & JS Dependencies-->
-  <link rel="stylesheet" href="css/style1.css" />
+  <link rel="stylesheet" href="css/style.css" />
   <script src="js/mail-generator.js"></script>
-  <script src="js/js1.js"></script>
+<!--  <script src="js/js1.js"></script> -->
 <!--Boostrap Dependencies-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -30,7 +30,7 @@
     </div>
 
     <div class="col-sm-9" id="main-content">
-        
+
 
     </div>
   </div>
@@ -47,7 +47,13 @@
 		<script src="js/mail-generator.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
     <script>
-        
+
+		$(document).ready(function(){
+			console.log("ready");
+
+
+		});
+
 window.onload = function(){
 
   	for(var i = 0; i < window.geemails.length; i++){
@@ -60,7 +66,7 @@ window.onload = function(){
 	  dateBox.className = "datebox";
 	  dateBox.innerHTML = window.geemails[i].date;
 	  itemBox.appendChild(dateBox);
-        
+
         var senderBox = document.createElement("div");
 	  senderBox.style.border = "1px solid black";
 	  senderBox.className = "sendbox";
@@ -73,60 +79,29 @@ window.onload = function(){
 	  subjectBox.innerHTML = window.geemails[i].subject;
 	  itemBox.appendChild(subjectBox);
 
-
-
 	  var bodyBox = document.createElement("div");
 	  bodyBox.style.border = "1px solid black";
 	  bodyBox.className = "bodbox";
 	  bodyBox.innerHTML = window.geemails[i].body;
 	  itemBox.appendChild(bodyBox);
+
+		itemBox.id = "container".concat(i);
+		bodyBox.id = "bodbox".concat(i);
 	}
-	};
+	for(i = 0; i < window.geemails.length; i++) {
+		document.getElementById("container" + i).addEventListener("click", listener.bind(null, i));
+	}
 
-var showMsg = document.getElementsByClassName("container");
-  showMsg.addEventListener("click", showMsg);
-
-  function showMsg(){
-    var msg = this.querySelectorAll("bodbox");
-    if(msg.style.display === "none"){
-      msg.style.display = "block";
-    }else{
-      msg.style.display = "none";
-    }
-  
-  }
-
-
-	
-
-
-
-
-
-
-	
-
-
-
-	  
-
-
-	
-
-
-
-
-
-
-
-        // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
+	function listener(index) {
+		var bod = document.getElementById("bodbox" + index);
+		if(bod.style.display === "none")
+			bod.style.display = "block";
+		else
+			bod.style.display = "none";
+	}
+};
+ // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE.
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-   
-
-  
-
-
-
 
     </script>
 	</head>
