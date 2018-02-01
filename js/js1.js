@@ -5,6 +5,14 @@ $(document).ready(function(){
 });
 
 window.onload = function(){
+	
+    var emailCount = window.geemails.length;
+    console.log(emailCount);
+    var main_content = document.getElementById("main-content");
+    
+    var emailLi = document.createElement("li");
+    emailLi.innerHTML = "<p>Total Email Count: " + emailCount + "</p>";
+    document.getElementById("list-stuff").appendChild(emailLi);
 
   	for(var i = 0; i < window.geemails.length; i++){
         
